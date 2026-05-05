@@ -278,8 +278,8 @@ section { scroll-margin-top: var(--nav-h); }
 }
 .project-gallery img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
+  display: block;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   transition: transform 0.4s ease;
