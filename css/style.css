@@ -153,7 +153,11 @@ section { scroll-margin-top: var(--nav-h); }
 }
 
 .hero {
-  padding: 92px 48px 64px;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 48px 64px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -319,12 +323,13 @@ section { scroll-margin-top: var(--nav-h); }
   background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  min-height: 100vh;
 }
 
 .about-inner {
   display: grid;
   grid-template-columns: 380px 1fr;
-  min-height: 600px;
+  min-height: 100vh;
 }
 
 /* Photo column */
@@ -360,9 +365,10 @@ section { scroll-margin-top: var(--nav-h); }
 
 /* Content column */
 .about-content-col {
-  padding: 80px 64px 80px;
+  padding: 80px 64px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 56px;
 }
 
@@ -401,10 +407,14 @@ section { scroll-margin-top: var(--nav-h); }
    CONTACT  (#contact)
    ============================================================ */
 
-#contact { background: var(--dark); color: #fff; }
+#contact { background: var(--dark); color: #fff; min-height: 100vh; }
 
 .contact-inner {
-  padding: 100px 48px 96px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 48px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -498,14 +508,17 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 900px) {
   .about-inner {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
+  #about { min-height: unset; }
   .about-photo-col {
-    height: 480px;
+    height: 520px;
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
   .about-content-col {
     padding: 60px 40px;
+    justify-content: flex-start;
   }
 }
 
@@ -525,7 +538,11 @@ footer a:hover { color: var(--accent); }
   }
   .nav-links.open { display: flex; }
 
-  .hero { padding: 56px 20px 48px; }
+  .hero {
+    min-height: calc(100vh - var(--nav-h));
+    padding: 48px 20px;
+    justify-content: center;
+  }
 
   .projects-list { padding: 0 20px 60px; }
 
@@ -546,7 +563,11 @@ footer a:hover { color: var(--accent); }
   .about-photo-col { height: 360px; }
   .about-content-col { padding: 48px 20px; }
 
-  .contact-inner { padding: 60px 20px 64px; }
+  .contact-inner {
+    min-height: 100vh;
+    padding: 60px 20px;
+    justify-content: center;
+  }
   .contact-cards { max-width: 100%; }
 
   footer {
